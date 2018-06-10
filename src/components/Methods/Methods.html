@@ -1,0 +1,112 @@
+<div>
+    <div class="row" style="margin-top: -30px">
+        <div class="card" >
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Edit Profile</h4>
+                <p class="card-category">Complete your profile</p>
+            </div>
+            <div class="card-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Create Methods <button type="button" class="btn btn-sm btn-danger create-methods" data-toggle="modal" data-target=".bd-createMethods"><i class="material-icons">add</i></button></h4>
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Methods</th>
+                                            <th >Path</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>GET</td>
+                                            <td>user/gg</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-success">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Response Body</h4>
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">Property</th>
+                                            <th class="text-center">Values</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="text" class="form-control"></td>
+                                            <td><input type="text" class="form-control"></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <button type="button" class="btn btn-primary pull-right">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--create new methods-->
+    <div class="modal fade bd-createMethods" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Type Methods</label>
+                                    <select class="form-control">
+                                        <option value="1">GET</option>
+                                        <option value="1">POST</option>
+                                        <option value="1">PUT</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Path</label>
+                                    <input type="text" class="form-control" placeholder="users/...">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary pull-right">Save</button>
+                        <button type="reset" class="btn btn-danger pull-right">Reset</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end create new methods-->
+</div>

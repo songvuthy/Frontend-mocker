@@ -1,0 +1,66 @@
+<div>
+    <div class="sidebar" data-color="danger" data-background-color="black" data-image="./../../../assets/img/sidebar-1.jpg">
+        <div class="logo">
+            <router-link to="/" class="simple-text logo-normal">
+                <b>Mocker API</b>
+            </router-link>
+        </div>
+        <div class="sidebar-wrapper" style="overflow-x: hidden">
+            <ul class="nav">
+                <li :class="'nav-item '+isActiveMenu('create')">
+                    <router-link :to="{name:'create'}" class="nav-link">
+                        <i class="material-icons">add</i>
+                        <p>Create New</p>
+                    </router-link>
+                </li>
+                <li :class="'nav-item '+isActiveMenu('setting')">
+                    <router-link :to="{name:'setting'}" class="nav-link">
+                        <i class="material-icons">settings</i>
+                        <p>Setting</p>
+                    </router-link>
+                </li>
+                <li :class="'nav-item '+isActiveMenu('help')">
+                    <router-link :to="{name:'help'}" class="nav-link">
+                        <i class="material-icons">help</i>
+                        <p>Help</p>
+                    </router-link>
+                </li>
+                <li :class="'nav-item '+isActiveMenu('notifications')">
+                    <router-link :to="{name:'notifications'}" class="nav-link">
+                        <i class="material-icons">notifications</i>
+                        <p>Notifications</p>
+                    </router-link>
+                </li>
+            </ul>
+            <!--My api for created-->
+            <div class="logo">
+                <b class="simple-text logo-normal">
+                    My Workspace ({{this.$root.data.length}})
+                </b>
+            </div>
+            <form class="form-inline ml-auto" style="width: 220px;margin-bottom: 0px">
+                <div class="form-group has-white">
+                    <input type="text" class="form-control" placeholder="Search" v-model="$root.key_search">
+                </div>
+                <!--<button type="submit" class="btn btn-white btn-raised btn-fab btn-fab-mini btn-round">-->
+                <!--<i class="material-icons">search</i>-->
+                <!--</button>-->
+            </form>
+            <div v-if="loading">
+                <p class="text-center text-danger">{{textLoading}}</p>
+            </div>
+            <div v-else style="width: 280px;height: 350px; overflow-x: hidden; overflow-y: scroll; ">
+                <ul class="nav">
+                    <li :class="'nav-item '+activeWorkspace(data_worksprace._id)" v-for="data_worksprace in this.$root.filteredList">
+                        <router-link :to="{name:'myworkspace',params:{id:data_worksprace._id}}" class="nav-link">
+                            <i class="material-icons">create</i>
+                            <p >{{data_worksprace.name}}</p>
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

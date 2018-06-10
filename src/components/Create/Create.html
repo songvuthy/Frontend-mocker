@@ -1,0 +1,50 @@
+<div class="row">
+    <!--submit resault-->
+    <div  v-if="loading" class="bg_loadingPage">
+        <div class="ic_loadingPage">
+
+            <i class="ic rotatting btn-rotatting" />
+        </div>
+    </div>
+    <div v-else class="col-md-10 offset-md-1">
+        <div class="card" >
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Create New Workspace</h4>
+                <p class="card-category">Complete your form</p>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Mock Name</label>
+                                <input v-model="workspace.mockName" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Deploy Name</label>
+                                <input v-model="workspace.deployName" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Description</label>
+                                <textarea v-model="workspace.description" class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" @click="onSave" class="btn btn-primary pull-right">Save</button>
+                    <button type="reset" class="btn btn-danger pull-right">Reset</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end-->
+</div>

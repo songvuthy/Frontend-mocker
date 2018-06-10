@@ -1,0 +1,74 @@
+<div>
+    <div  v-if="loading" class="bg_loadingPage">
+        <div class="ic_loadingPage">
+
+            <i class="ic rotatting btn-rotatting" />
+        </div>
+    </div>
+    <div v-else>
+        <div class="row">
+            <div class="col-md-2 col-sm-6" v-for="resources in resources">
+                <div class="card card--hover">
+                    <router-link :to="{name:'myresource',params:{id:resources._id}}">
+                        <div class="card-header card-chart card-header-danger">
+                            <div class="ct-chart"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-danger text-center" style="text-transform: uppercase;"><b>{{resources.name}}</b></h5>
+                            <p class="card-category">{{resources.description}}</p>
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                    </router-link>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <div class="card card--hover">
+                    <div class="card-header card-chart card-header-danger">
+                        <div class="ct-chart"></div>
+                    </div>
+                    <div class="card-body  hover-i">
+                        <h3 class="card-title text-center"><i class="material-icons">add</i></h3>
+                        <p class="card-category text-center">New resource</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!--submit resault-->
+            <div class="col-md-10 offset-md-1">
+                <div class="card" >
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Edit Profile</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Resource</label>
+                                        <input v-model="resource.resource" type="text" class="form-control" placeholder="users">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Description (Optional)</label>
+                                        <textarea v-model="resource.description" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="reset" class="btn btn-primary pull-right" @click="onSave">Next</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--end-->
+        </div>
+
+
+    </div>
+</div>

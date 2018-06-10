@@ -1,0 +1,4 @@
+.ic {  display: inline-block;  vertical-align: middle;  background: url('../../assets/player.png') no-repeat;  }
+.card--hover:hover{cursor: pointer;box-shadow: 0 10px 16px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.1) !important}
+.card--hover .hover-i i{font-size: 40px;-webkit-transition: 0.3s;;transition: 0.3s;}
+/*.card--hover .hover-i:hover i{font-size: 45px;}*/
